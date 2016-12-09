@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>bookshelf</title>
+    <link rel="stylesheet" type="text/css" href="dist/css/index.css">
+    <link rel="stylesheet" type="text/css" href="dist/css/iconfont.css">
+    <script src="dist/js/template.js"></script>
+    <script src="dist/js/zepto.js"></script>
+    <script src="dist/js/jquery-1.11.0.js"></script>
+    <script src="dist/js/touch.js"></script>
+    <script type="text/javascript" src="http://cdn.webfont.youziku.com/wwwroot/js/wf/youziku.api.min.js"></script>
+</head>
+<body>
+<div id="bookshelf_wrap">
+    <div id="set">
+        <div class="set_header">
+            <div class="set_header_right">
+                >
+            </div>
+            <dl class="set_header_left">
+                <dt class="set_header_img"><img src="dist/img/headerimg.jpg" alt=""></dt>
+                <dd class="set_header_left_dd1">
+                    <span class="username">Mr.菜</span><i class="userlv">LV5</i>
+                </dd>
+                <dd class="set_header_left_dd2">
+                <span class="usermessage"><i class="message_color">200</i>金币</span>
+                <span class="usermessage"><i class="message_color">196</i>积分</span>
+                </dd>
+            </dl>
+        </div>
+        <div class="set_body">
+            <ul>
+                <li><i class="set_body_fa iconfont">&#xe6be;</i><span>金币充值</span></li>
+                <li><i class="set_body_fa iconfont">&#xe655;</i><span>签到抽奖</span></li>
+                <li><i class="set_body_fa iconfont">&#xe688;</i><span>书友圈</span></li>
+            </ul>
+            <ul>
+                <li><i class="set_body_fa iconfont">&#xe6d6;</i><span>我的足迹</span></li>
+                <li><i class="set_body_fa iconfont">&#xe64f;</i><span>消息</span></li>
+            </ul>
+            <ul>
+                <li><i class="set_body_fa iconfont">&#xe62c;</i><span>意见反馈</span></li>
+            </ul>
+        </div>
+        <div class="set_footer">
+            <div class="set_footer_left"><i class="iconfont">&#xe600;</i><span>设置</span></div>
+            <div class="set_footer_right"><i class="iconfont">&#xe61b;</i><span>设置</span></div>
+        </div>
+    </div>
+
+    <div id="bookshelf">
+        <div id="bookshelf_header" class="bookshelf_header">
+            <i id="tab" class="iconfont">&#xe895;</i>
+            <span class="bookshelf_header_center">宜搜小说</span>
+            <i class="iconfont bookshelf_header_right">&#xe60d;</i>
+            <i class="iconfont bookshelf_header_right bookshelf_header_small">&#xe651;</i>
+        </div>
+            <section id="content">
+
+            </section>
+    <script id="box" type="text/html">
+        <section>
+            {{each list as value i}}
+                <dl class="book">
+                    <dt><img src="{{value.book_url}}" alt=""></dt>
+                    <dd class="bookshelf_dd1">{{value.book_name}}</dd>
+                    <dd>连载至：{{value.book_count}}</dd>
+                    <dd>155/{{value.book_count}}</dd>
+                    <dd  class="del" data-id="{{value.book_id}}">删除</dd>
+
+                </dl>
+                {{/each}}
+        </section>
+    </script>
+        <div class="bookshelf_footer">
+            <span class="tab bookshelf_footer_color">
+                <i class="iconfont">&#xe6d5;</i>
+                <p>书架</p>
+            </span>
+            <span class="tab">
+                <i class="iconfont">&#xe620;</i>
+                <p>精选</p>
+            </span>
+            <span class="tab">
+                <i class="iconfont">&#xe651;</i>
+                <p>搜索</p>
+            </span>
+            <span class="tab">
+                <i class="iconfont">&#xe60d;</i>
+                <p>分类</p>
+            </span>
+        </div>
+    </div>
+</div>
+<script src="dist/js/index.js"></script>
+<script type="text/javascript">
+            $youziku.load("body", "e577eaa14eb84edaae53f0f9a2a19b1f", "minijiankatong");
+            /*$youziku.load("#id1,.class1,h1", "e577eaa14eb84edaae53f0f9a2a19b1f", "minijiankatong");*/
+            /*．．．*/
+            $youziku.draw();
+        </script>
+</body>
+</html>

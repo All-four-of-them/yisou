@@ -1,0 +1,1 @@
+$(document).ready(function(){new Swiper(".swiper-container",{loop:!0,pagination:".swiper-pagination",paginationClickable:!0,autoplay:2500});$(".sed").on("tap",function(){$(".sed").removeClass("sed-jx-b"),$(this).addClass("sed-jx-b")})});

@@ -1,0 +1,1 @@
+$(".link").on("click",function(){window.location.href="http://localhost:8000/bklist.html"}),$(".sort_footer").children().on("click",function(){$(this).css("color","#EB801E")});

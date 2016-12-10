@@ -11,7 +11,7 @@
 	</head>
 	<body>
 		<header class="bklist_header">
-			<i class="fa iconfont">&#xe62c;</i>
+			<i class="fa iconfont">&#xe610;</i>
 			<h2>玄幻奇幻</h2>
 		</header>
 		<section class="bklist_section clearfix">
@@ -47,7 +47,8 @@
 						<dd class="booK_id">0</dd>
 					</dl>
 				</span>
-				<span class="span3"><i class="add iconfont">&#xe61e;</i></span>
+				<span class="span3"><i class="add1 iconfont">&#xe61e;</i></span>
+                <span class="span4"><i class="add2 iconfont">&#xe621;</i></span>
 			</div>
 			<div>
 				<span class="span1"><img src="dist/img/lwcs.jpg"/></span>
@@ -60,7 +61,8 @@
 						<dd class="booK_id">1</dd>
 					</dl>
 				</span>
-				<span class="span3"><i class="add iconfont">&#xe61e;</i></span>
+				<span class="span3"><i class="add1 iconfont">&#xe61e;</i></span>
+                <span class="span4"><i class="add2 iconfont">&#xe621;</i></span>
 			</div>
 			<div>
 				<span class="span1"><img src="dist/img/wmsj.jpg"/></span>
@@ -73,7 +75,8 @@
 						<dd class="booK_id">2</dd>
 					</dl>
 				</span>
-				<span class="span3"><i class="add iconfont">&#xe61e;</i></span>
+                <span class="span3"><i class="add1 iconfont">&#xe61e;</i></span>
+                <span class="span4"><i class="add2 iconfont">&#xe621;</i></span>
 			</div>
 			<div>
 				<span class="span1"><img src="dist/img/xylz.jpg"/></span>
@@ -84,9 +87,11 @@
 						<dd>连载 - 异界争霸</dd>
 						<dd>更新至1028章</dd>
 						<dd class="booK_id">3</dd>
+
 					</dl>
 				</span>
-				<span class="span3"><i class="add iconfont">&#xe61e;</i></span>
+				<span class="span3"><i class="add1 iconfont">&#xe61e;</i></span>
+                <span class="span4"><i class="add2 iconfont">&#xe621;</i></span>
 			</div>
 			<div>
 				<span class="span1"><img src="dist/img/wldf.jpg"/></span>
@@ -99,18 +104,87 @@
 						<dd class="booK_id">4</dd>
 					</dl>
 				</span>
-				<span class="span3"><i class="add iconfont">&#xe61e;</i></span>
+				<span class="span3"><i class="add1 iconfont">&#xe61e;</i></span>
+                <span class="span4"><i class="add2 iconfont">&#xe621;</i></span>
 			</div>
-			
+
 		</shelf>
 		<div class="tip tip1">成功添加到书架</div>
 		<div class="tip tip2">成功从书架删除</div>
 		<script src="dist/js/bklist.js" type="text/javascript" charset="utf-8"></script>
-		<script type="text/javascript">
-            $youziku.load("body", "e577eaa14eb84edaae53f0f9a2a19b1f", "minijiankatong");
-            /*$youziku.load("#id1,.class1,h1", "e577eaa14eb84edaae53f0f9a2a19b1f", "minijiankatong");*/
-            /*．．．*/
-            $youziku.draw();
-       </script>
+<script type="text/javascript">
+    /* 字体改变 */
+    $youziku.load("body", "e577eaa14eb84edaae53f0f9a2a19b1f", "minijiankatong");
+    /*$youziku.load("#id1,.class1,h1", "e577eaa14eb84edaae53f0f9a2a19b1f", "minijiankatong");*/
+    /*．．．*/
+    $youziku.draw();
+        $(".fa").click( function(event) {
+            var href=window.location.href;
+            var newhref=href.split("bklist")[0];
+            window.location.href=newhref + "sort.html"
+        });
+    $('.add1').click(function () {
+        var id=$(this).parent().siblings(".span2").children("dl").children(".booK_id").html();
+        $(".tip").hide();
+        $(this).parent(".span3").hide();
+        $(this).parent(".span3").siblings('.span4').show();
+        addGood( id );
+        $(".tip1").show().css("animation-name","show");
+    });
+    $('.add2').click(function () {
+        var id=$(this).parent().siblings(".span2").children("dl").children(".booK_id").html();
+        $(".tip").hide();
+        var $this=$(this);
+
+        removeGood(id,function(isSuccess){
+            if ( isSuccess ) {
+                    $this.parent(".span4").hide();
+                    $this.parent(".span4").siblings('.span3').show();
+                    $(".tip2").show().css("animation-name","show");
+                } else {
+                    alert( '删除失败，请重试' );
+                }
+
+        })
+    });
+
+    function removeGood ( id, callback ) {
+        var goodlist = localStorage.getItem( Static.good );
+        goodlist = JSON.parse( goodlist ) || [];
+        for ( var i = 0; i < goodlist.length; i++ ) {
+            if ( goodlist[i] == id ) {
+                goodlist.splice( i, 1 );
+                localStorage.setItem( Static.good, JSON.stringify( goodlist ) );
+                callback( true );
+                return;
+            }
+        }
+        callback( false );
+    }
+
+    /* 滑动条滚动事件 */
+    $(window).scroll(function() {
+        var sTop=$(this).scrollTop();
+        // console.log(sTop);
+        if(sTop>100){
+            $(".bklist_section").hide();
+            $(".bklist-nav").show();
+        }else{
+            $(".bklist_section").show();
+            $(".bklist-nav").hide();
+        }
+    });
+    /* 添加书架成功后，刷新页面，样式不发生改变，还是原来的效果*/
+    var getId=JSON.parse(localStorage.getItem("goodlist"));
+    // console.log(getId);
+    for(var i=0;i<getId.length;i++){
+        for(var j=0;j<$('.booK_id').length;j++){
+            if(getId[i]==$('.booK_id').eq(j).html()){
+                $('.add1').eq(j).parent(".span3").hide();
+                $('.add1').eq(j).parent(".span3").siblings('.span4').show();
+            }
+        }
+    }
+</script>
 	</body>
 </html>

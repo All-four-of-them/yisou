@@ -136,9 +136,20 @@ body {
   text-align: center;
   padding-top: 12%;
 }
+.bklist-shelf div .span4 {
+  flex: 1;
+  display: inline-block;
+  text-align: center;
+  padding-top: 12%;
+  display: none;
+}
 .bklist-shelf div .span3 i {
   font-size: 5rem;
   color: #eb801e;
+}
+.bklist-shelf div .span4 i {
+  font-size: 5rem;
+  color: #2DF031;
 }
 .bklist-shelf .bklist-shelf-bd {
   border-top: 10px solid #f7f7f7;

@@ -21,7 +21,7 @@
 	<body>
 		<header class="sort_header clearfix">
 			<h2>分类</h2>
-			<i class="fa iconfont">&#xe667;</i>
+			<i class="fa iconfont">&#xe651;</i>
 		</header>
 		<warning class="sort_warning">
 			<span>公告：为响应国家净网行动，部分小说或章节不予展示，感谢读者理解。</span>
@@ -171,14 +171,14 @@
 			</span>
 			<span>
 				<a href="../Carina/search.html">
-					<i class="fa iconfont">&#xe667;</i>
+					<i class="fa iconfont">&#xe651;</i>
 					<p>搜书</p>
 				</a>
 
 			</span>
 			<span  class="color">
 				<a href='#'>
-					<i class="fa iconfont">&#xe601;</i>
+					<i class="fa iconfont">&#xe60d;</i>
 					<p>分类</p>
 				</a>
 
@@ -190,6 +190,11 @@
             /*$youziku.load("#id1,.class1,h1", "e577eaa14eb84edaae53f0f9a2a19b1f", "minijiankatong");*/
             /*．．．*/
             $youziku.draw();
+           	$('.link').click(function(event) {
+           		var href=window.location.href;
+           		var newhref=href.split("sort")[0];
+           		window.location.href=newhref+"bklist.html"
+           	});
        </script>
 	</body>
 </html>

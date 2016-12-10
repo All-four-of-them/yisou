@@ -23,6 +23,10 @@ html {
   text-align: "";
   background-color: #f6f7f2;
 }
+body{
+  width: 100%;
+  overflow: hidden;
+}
 .sed-header-top {
   padding-left: 10px;
   padding-top: 10px;

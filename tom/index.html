@@ -11,6 +11,15 @@
     <script src="dist/js/jquery-1.11.0.js"></script>
     <script src="dist/js/touch.js"></script>
     <script type="text/javascript" src="http://cdn.webfont.youziku.com/wwwroot/js/wf/youziku.api.min.js"></script>
+    <style type="text/css" media="screen">
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        .bookshelf_footer_color a{
+            color: orangered;
+        }
+    </style>
 </head>
 <body>
 <div id="bookshelf_wrap">
@@ -75,31 +84,43 @@
         </section>
     </script>
         <div class="bookshelf_footer">
-            <span class="tab bookshelf_footer_color">
-                <i class="iconfont">&#xe6d5;</i>
-                <p>书架</p>
+            <span class="bookshelf_footer_first tab bookshelf_footer_color">
+                <a href="#">
+                    <i class="iconfont">&#xe6d5;</i>
+                    <p>书架</p>
+                </a>
+
             </span>
-            <span class="tab">
-                <i class="iconfont">&#xe620;</i>
-                <p>精选</p>
+            <span class="bookshelf_footer_second tab">
+                <a href="../Ann/selected.html">
+                    <i class="iconfont">&#xe620;</i>
+                    <p>精选</p>
+                </a>
+
             </span>
-            <span class="tab">
-                <i class="iconfont">&#xe651;</i>
-                <p>搜索</p>
+            <span class="bookshelf_footer_three tab">
+                <a href="../Carina/search.html">
+                    <i class="iconfont">&#xe651;</i>
+                    <p>搜索</p>
+                </a>
+
             </span>
-            <span class="tab">
-                <i class="iconfont">&#xe60d;</i>
-                <p>分类</p>
+            <span class="bookshelf_footer_four tab">
+                <a href="../Andy/sort.html">
+                    <i class="iconfont">&#xe60d;</i>
+                    <p>分类</p>
+                </a>
+
             </span>
         </div>
     </div>
 </div>
 <script src="dist/js/index.js"></script>
 <script type="text/javascript">
-            $youziku.load("body", "e577eaa14eb84edaae53f0f9a2a19b1f", "minijiankatong");
-            /*$youziku.load("#id1,.class1,h1", "e577eaa14eb84edaae53f0f9a2a19b1f", "minijiankatong");*/
-            /*．．．*/
-            $youziku.draw();
-        </script>
+    $youziku.load("body", "e577eaa14eb84edaae53f0f9a2a19b1f", "minijiankatong");
+    /*$youziku.load("#id1,.class1,h1", "e577eaa14eb84edaae53f0f9a2a19b1f", "minijiankatong");*/
+    /*．．．*/
+    $youziku.draw();
+</script>
 </body>
 </html>

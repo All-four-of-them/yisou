@@ -8,6 +8,15 @@
 		<link rel="stylesheet" href="dist/css/sort.css" />
 		<script src="dist/js/zepto.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript" src="http://cdn.webfont.youziku.com/wwwroot/js/wf/youziku.api.min.js"></script>
+		<style type="text/css" media="screen">
+			a{
+				color: #000;
+				text-decoration: none;
+			}
+			.color a {
+				color: orangered;
+			}
+		</style>
 	</head>
 	<body>
 		<header class="sort_header clearfix">
@@ -147,20 +156,32 @@
 		</main>
 		<footer class="sort_footer">
 			<span>
+			<a href='../tom/index.html'>
 				<i class="fa iconfont">&#xe6d5;</i>
 				<p>书架</p>
+			</a>
+
 			</span>
 			<span>
-				<i class="fa iconfont">&#xe620;</i>
-				<p>精选</p>
+				<a href="../Ann/selected.html">
+					<i class="fa iconfont">&#xe620;</i>
+					<p>精选</p>
+				</a>
+
 			</span>
 			<span>
-				<i class="fa iconfont">&#xe667;</i>
-				<p>搜书</p>
+				<a href="../Carina/search.html">
+					<i class="fa iconfont">&#xe667;</i>
+					<p>搜书</p>
+				</a>
+
 			</span>
-			<span>
-				<i class="fa iconfont">&#xe601;</i>
-				<p>分类</p>
+			<span  class="color">
+				<a href='#'>
+					<i class="fa iconfont">&#xe601;</i>
+					<p>分类</p>
+				</a>
+
 			</span>
 		</footer>
 		<script src="dist/js/sort.js" type="text/javascript" charset="utf-8"></script>

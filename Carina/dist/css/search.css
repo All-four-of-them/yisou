@@ -102,6 +102,7 @@ body {
   height: 50%;
   text-align: left;
   display: none;
+  overflow: hidden;
 }
 .wraper section .section_content .section_content_four li dl {
   width: 100%;
@@ -115,14 +116,21 @@ body {
   width: 30%;
   height: 35%;
   margin-right: 20px;
+  padding: 0;
 }
 .wraper section .section_content .section_content_four li dl dt img {
   width: 100px;
   height: 100px;
+  margin: 2px 2px;
+  box-shadow: 0 2px 8px #bbb;
 }
 .wraper section .section_content .section_content_four li dl dd {
-  float: left;
+  display: inline-block;
   width: 61%;
+  height: 104px;
+  overflow: hidden;
+  margin-bottom: 5px;
+  text-overflow: ellipsis;
 }
 .wraper section .section_content .section_content_four li dl dd h2 {
   padding-top: 5px;
@@ -197,13 +205,12 @@ body {
   float: left;
   width: 100%;
   height: 30%;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 8px #bbb;
 }
 .wraper section .section_content ul li dl dt img {
   width: 100%;
   height: 100%;
-}
-.wraper section .section_content ul li dl dd {
-  padding-top: 45px;
 }
 .wraper .bookshelf_footer {
   width: 100%;
